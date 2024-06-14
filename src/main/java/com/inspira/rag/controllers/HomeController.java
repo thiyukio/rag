@@ -1,4 +1,4 @@
-package com.inspira.rag.controller;
+package com.inspira.rag.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

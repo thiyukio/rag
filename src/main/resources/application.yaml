@@ -6,3 +6,17 @@ spring:
           google:
             clientId: ${GOOGLE_CLIENT_ID}
             clientSecret: ${GOOGLE_CLIENT_SECRET}
+  datasource:
+    url: jdbc:${DB_ENGINE}://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    properties:
+      hibernate:
+        dialect: ${DB_DIALECT:org.hibernate.dialect.MySQL8Dialect}
+    hibernate:
+      ddl-auto: ${DB_DDL_AUTO:validate}
+    show-sql: 'false'
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true
